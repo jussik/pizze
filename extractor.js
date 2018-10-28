@@ -15,8 +15,10 @@
         prices: []
     };
 
-    if (restaurant.toppings.length === 0)
-        alert("Open topping picker dialog first");
+    if (restaurant.toppings.length === 0) {
+        console.error("Open topping picker dialog first");
+        return;
+    }
 
     const category = document.querySelector("#product_categories .category_item.active > a").id.substring(5);
     const prodButtons = document.getElementById(category).querySelectorAll("button.edit_product.edit_only");
@@ -39,5 +41,5 @@
     }
 
     localStorage.pizze_extractor = JSON.stringify(data);
-    console.log(restaurant);
+    console.log(localStorage.pizze_extractor);
 })();

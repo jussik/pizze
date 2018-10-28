@@ -208,19 +208,6 @@
       "toppings": [ "Ananas", "Aurajuusto", "Aurinkokuivattu tomaatti", "Avokado", "Barbequekastike", "Basilika", "Broileri", "Chili", "Chorizomakkara", "Currykastike", "Etanoita", "Falafel", "Fetajuusto", "Habanero", "Häränsuikale", "Herkkusieni", "Herne", "Jalopeno", "Jättikatkaravut", "Jauheliha", "Kana", "Kananmuna", "Kastikkeet", "Katkarapu", "Kebab", "Kebabliha", "Kermakastike", "Kinkku", "Kirsikkatomaatti", "Korianteri", "Kurkku", "Majoneesi", "Mexicana-kastike", "Mozzarella", "Mozzarellajuusto", "Musta oliivi", "Mustapippuri", "Mustekala", "Naudan paahtopaisti", "Oliivi", "Oregano", "Paprika", "Parmankinkku", "Parmesanjuusto", "Parsa", "Pekoni", "Pepperoni", "Pestokastike", "Poronliha", "Punasipuli", "Raejuusto", "Ranskankerma", "Ricottajuusto", "Rucola", "Salami", "Simpukka", "Sipuli", "Sipulirenkaita", "Tabasco", "Tankoparsa", "Texaspete-kastike", "Tonnikala", "Tulinen kastike", "Tuore korianteri", "Tuore tomaattiviipale", "Tuoretomaatti", "Tuplajuusto", "Turkinpippuri", "Valkopippuri", "Valkosipuli", "Vihreä chili" ],
       "prices": [
         {
-          "toppingCount": 4,
-          "sizes": [
-            {
-              "name": "Norm.",
-              "price": "10.00"
-            },
-            {
-              "name": "Perhe",
-              "price": "18.00"
-            }
-          ]
-        },
-        {
           "toppingCount": 3,
           "sizes": [
             {
@@ -230,6 +217,19 @@
             {
               "name": "Perhe",
               "price": "16.00"
+            }
+          ]
+        },
+        {
+          "toppingCount": 4,
+          "sizes": [
+            {
+              "name": "Norm.",
+              "price": "10.00"
+            },
+            {
+              "name": "Perhe",
+              "price": "18.00"
             }
           ]
         },
@@ -325,15 +325,6 @@
           "toppingCount": 4,
           "sizes": [
             {
-              "name": "70 cm",
-              "price": "39.90"
-            }
-          ]
-        },
-        {
-          "toppingCount": 4,
-          "sizes": [
-            {
               "name": "Norm.",
               "price": "9.40"
             },
@@ -348,6 +339,10 @@
             {
               "name": "Perhe",
               "price": "15.90"
+            },
+            {
+              "name": "70 cm",
+              "price": "39.90"
             }
           ]
         }
@@ -359,19 +354,6 @@
       "name": "Pizzeria Kebab Drina",
       "toppings": [ "Ananas", "Aurajuusto", "Chili", "Fetajuusto", "Herkkusieni", "Jalapeno", "Jalopeno", "Jauheliha", "Kana", "Kananmuna", "Katkarapu", "Kebabliha", "Kinkku", "Musta oliivi", "Mustapippuri", "Naudanliha", "Oliivi", "Paprika", "Pekoni", "Pepperoni", "Punasipuli", "Rucola", "Salami", "Simpukka", "Sinihomejuusto", "Sipuli", "Texas pete-kastike", "Tomaatti", "Tonnikala", "Tuore tomaattiviipale", "Tuplajuusto", "Turkinpippuri" ],
       "prices": [
-        {
-          "toppingCount": 4,
-          "sizes": [
-            {
-              "name": "Norm.",
-              "price": "9.50"
-            },
-            {
-              "name": "Perhe",
-              "price": "18.00"
-            }
-          ]
-        },
         {
           "toppingCount": 2,
           "sizes": [
@@ -395,6 +377,19 @@
             {
               "name": "Perhe",
               "price": "17.00"
+            }
+          ]
+        },
+        {
+          "toppingCount": 4,
+          "sizes": [
+            {
+              "name": "Norm.",
+              "price": "9.50"
+            },
+            {
+              "name": "Perhe",
+              "price": "18.00"
             }
           ]
         }
@@ -473,15 +468,6 @@
           "toppingCount": 4,
           "sizes": [
             {
-              "name": "70 cm",
-              "price": "39.90"
-            }
-          ]
-        },
-        {
-          "toppingCount": 4,
-          "sizes": [
-            {
               "name": "Norm.",
               "price": "9.40"
             },
@@ -496,6 +482,10 @@
             {
               "name": "Perhe",
               "price": "15.90"
+            },
+            {
+              "name": "70 cm",
+              "price": "39.90"
             }
           ]
         }
@@ -588,19 +578,6 @@
       "toppings": [ "Ananas", "Aurajuusto", "Barbequekastike", "Chorizomakkara", "Fetajuusto", "Herkkusieni", "Herne", "Jäävuorisalaatti", "Jalapeno", "Jalopeno", "Jauheliha", "Kana", "Kananmuna", "Kapris", "Katkarapu", "Kebabliha", "Kinkku", "Maissi", "Majoneesi", "Mozzarellajuusto", "Naudan paahtopaisti", "Oliivi", "Paprika", "Parsa", "Pekoni", "Pepperoni", "Punasipuli", "Salami", "Siipikastike", "Simpukka", "Tomaatti", "Tonnikala", "Tuplajuusto", "Tuplapaksu pizzapohja", "Vihreä basilika", "Vihreä rucola", "Vuohenmaitojuusto" ],
       "prices": [
         {
-          "toppingCount": 6,
-          "sizes": [
-            {
-              "name": "Norm.",
-              "price": "12.00"
-            },
-            {
-              "name": "Perhe",
-              "price": "20.00"
-            }
-          ]
-        },
-        {
           "toppingCount": 4,
           "sizes": [
             {
@@ -622,6 +599,19 @@
             {
               "name": "Kuningas",
               "price": "30.00"
+            }
+          ]
+        },
+        {
+          "toppingCount": 6,
+          "sizes": [
+            {
+              "name": "Norm.",
+              "price": "12.00"
+            },
+            {
+              "name": "Perhe",
+              "price": "20.00"
             }
           ]
         }
@@ -864,19 +854,6 @@
       "toppings": [ "Ananas", "Aurajuusto", "Chili", "Chili [vihreä]", "Extrajuusto", "Fetajuusto", "Herkkusieni", "Jalopeno", "Jauheliha", "Kana", "Kananmuna", "Katkarapu", "Kebab-liha", "Kinkku", "Oliivi", "Paprika", "Pekoni", "Pepperoni", "Pepperonisalami", "Salami", "Simpukka", "Sipuli", "Tacokastike", "Tomaatti", "Tonnikala", "Valkosipuli" ],
       "prices": [
         {
-          "toppingCount": 4,
-          "sizes": [
-            {
-              "name": "Norm.",
-              "price": "10.00"
-            },
-            {
-              "name": "Perhe",
-              "price": "17.50"
-            }
-          ]
-        },
-        {
           "toppingCount": 3,
           "sizes": [
             {
@@ -886,6 +863,19 @@
             {
               "name": "Perhe",
               "price": "16.50"
+            }
+          ]
+        },
+        {
+          "toppingCount": 4,
+          "sizes": [
+            {
+              "name": "Norm.",
+              "price": "10.00"
+            },
+            {
+              "name": "Perhe",
+              "price": "17.50"
             }
           ]
         }
@@ -926,15 +916,6 @@
           "toppingCount": 4,
           "sizes": [
             {
-              "name": "Norm.",
-              "price": "36.00"
-            }
-          ]
-        },
-        {
-          "toppingCount": 4,
-          "sizes": [
-            {
               "name": "Normaali",
               "price": "10.40"
             },
@@ -945,6 +926,10 @@
             {
               "name": "Perhe",
               "price": "19.40"
+            },
+            {
+              "name": "60cm",
+              "price": "36.00"
             }
           ]
         }
@@ -978,24 +963,6 @@
       "toppings": [ "Ananas", "Aurajuusto", "Chili", "Fetajuusto", "Herkkusieni", "Jauheliha", "Kana", "Katkarapu", "Kebabliha", "Kinkku", "Mozzarellajuusto", "Oliivi", "Paprika", "Pekoni", "Pepperoni", "Salami", "Sieni", "Sipuli", "Tomaatti", "Tonnikala" ],
       "prices": [
         {
-          "toppingCount": 4,
-          "sizes": [
-            {
-              "name": "70cm",
-              "price": "40.00"
-            }
-          ]
-        },
-        {
-          "toppingCount": 4,
-          "sizes": [
-            {
-              "name": "80cm",
-              "price": "55.00"
-            }
-          ]
-        },
-        {
           "toppingCount": 3,
           "sizes": [
             {
@@ -1011,11 +978,24 @@
               "price": "18.90"
             },
             {
-              "name": "Party Pizza 70 cm",
+              "name": "70cm",
               "price": "40.00"
             },
             {
-              "name": "Mega Party Pizza 80 cm",
+              "name": "80cm",
+              "price": "55.00"
+            }
+          ]
+        },
+        {
+          "toppingCount": 4,
+          "sizes": [
+            {
+              "name": "70cm",
+              "price": "40.00"
+            },
+            {
+              "name": "80cm",
               "price": "55.00"
             }
           ]

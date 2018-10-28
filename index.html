@@ -64,15 +64,20 @@
             border-collapse: collapse;
             white-space: nowrap;
         }
+        #summary td { vertical-align: top; }
+
         #summaryHeader td {
             font-weight: bold;
             border-bottom: 1px solid black;
         }
         #summaryHeader td:first-of-type { width: 20px; }
 
+        #summaryFooter td { border-top: 1px solid black; }
+        #summaryFooter .summary-count { font-weight: bold; }
+        #summaryFooter .summary-count.over { color: red; }
+
         .topping label { color: #ddd; }
         #resNames > div { display: none; }
-        #summary td { display: none; }
 
         #summary td:first-of-type {
             display: table-cell;
@@ -93,10 +98,11 @@
 <div id="summaryContainer">
     <table id="summary">
         <thead>
-            <tr id="summaryHeader">
-                <td></td>
-            </tr>
+            <tr id="summaryHeader"> </tr>
         </thead>
+        <tfoot>
+            <tr id="summaryFooter"></tr>
+        </tfoot>
         <tbody id="summaryTable"></tbody>
     </table>
 </div>

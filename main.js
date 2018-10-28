@@ -52,7 +52,6 @@
         sheet.insertRule(`body.no-res-${i} .res-box.index-${i} { background: #f8f8f8; }`);
         sheet.insertRule(`body.no-res-${i} .res-box.available.index-${i} { background: #d4f7d4; }`);
         sheet.insertRule(`body.res-${i} .topping.res-${i} label { color: black; }`);
-        sheet.insertRule(`body.res-${i} #summary td:nth-of-type(${i + 2}) { display: table-cell; }`);
 
         document.body.classList.add("res-" + i);
 
@@ -67,10 +66,6 @@
         resName.textContent = " " + res.name;
         resName.classList = "res-" + i;
         resNames.appendChild(resName);
-
-        const header = document.createElement("td");
-        header.textContent = res.name;
-        summaryHeader.appendChild(header);
     });
 
     function handleResHover(elem) {
@@ -186,24 +181,89 @@
     function updateSummary() {
         const selected = [].map.call(toppingsContainer.querySelectorAll(":checked"),
             ch => toppingsByKey[ch.parentElement.parentElement.dataset.key]);
-        let hasRestaurants = false;
-        allRestaurants.forEach((res, i) => {
-            const has = selected.every(t => t.restaurants.includes(res.id));
-            document.body.classList.toggle("res-" + i, has);
-            document.body.classList.toggle("no-res-" + i, !has);
-            hasRestaurants |= has;
-        });
+        const restaurants = allRestaurants.filter((res, i) => {
+                const has = selected.every(t => t.restaurants.includes(res.id));
+                document.body.classList.toggle("res-" + i, has);
+                document.body.classList.toggle("no-res-" + i, !has);
+                return has;
+            });
 
-        // summary table
+        // clear and fill summary table
+        while (summaryHeader.firstChild) {
+            summaryHeader.removeChild(summaryHeader.firstChild);
+        }
+        while (summaryFooter.firstChild) {
+            summaryFooter.removeChild(summaryFooter.firstChild);
+        }
         while (summaryTable.firstChild) {
             summaryTable.removeChild(summaryTable.firstChild);
         }
 
-        summaryContainer.style.display = selected.length > 0 && hasRestaurants ? "" : "none";
+        const showSummary = selected.length > 0 && restaurants.length > 0;
+        summaryContainer.style.display = showSummary ? "" : "none";
 
-        if (!hasRestaurants)
+        if (!showSummary)
             return;
 
+        const summaryColumns = restaurants.map(r => {
+            let bestPrice = null;
+            r.prices.some(p => {
+                if (selected.length > p.toppingCount)
+                    return false;
+
+                bestPrice = p;
+                return true;
+            });
+            let over = false;
+            if (bestPrice === null) {
+                bestPrice = r.prices[r.prices.length - 1];
+                over = true;
+            }
+            return {
+                restaurant: r,
+                bestPrice: bestPrice,
+                cheapest: +bestPrice.sizes[0].price,
+                over: over
+            };
+        }).sort((a, b) => a.over - b.over || a.cheapest - b.cheapest);
+
+        // empty cell for remove icons
+        summaryHeader.appendChild(document.createElement("td"));
+        summaryFooter.appendChild(document.createElement("td"));
+
+        // header cells
+        summaryColumns.forEach(sum => {
+            const td = document.createElement("td");
+            td.textContent = sum.restaurant.name;
+            summaryHeader.appendChild(td);
+        });
+
+        // footer cells
+        summaryColumns.forEach(sum => {
+            const td = document.createElement("td");
+
+            const countElem = document.createElement("div");
+            countElem.className = "summary-count";
+            if (sum.over) {
+                countElem.classList.add("over");
+                countElem.textContent = `Max ${sum.bestPrice.toppingCount} toppings`;
+            } else {
+                countElem.textContent = sum.bestPrice.toppingCount + " toppings:";
+            }
+            td.appendChild(countElem);
+
+            if (!sum.over) {
+                sum.bestPrice.sizes.forEach(s => {
+                    const priceElem = document.createElement("div");
+                    priceElem.textContent = s.name + " €" + s.price;
+                    td.appendChild(priceElem);
+                });
+            }
+
+            summaryFooter.appendChild(td);
+        });
+
+        // data cells
         selected.forEach(t => {
             const tr = document.createElement("tr");
 
@@ -216,10 +276,11 @@
             });
             tr.appendChild(rem);
 
-            allRestaurants.forEach(res => {
+            summaryColumns.forEach(sum => {
                 const td = document.createElement("td");
-                if (t.byRestaurant[res.id])
-                    t.byRestaurant[res.id].forEach(t => {
+                const resId = sum.restaurant.id;
+                if (t.byRestaurant[resId])
+                    t.byRestaurant[resId].forEach(t => {
                         const div = document.createElement("div");
                         div.textContent = t;
                         td.appendChild(div);
